@@ -3,8 +3,8 @@
 // Font: Noto Sans JP
 // Layout: Single column LP, max-width 700px centered
 
-const LINE_HREF = "#";
-const HOTPEPPER_HREF = "#";
+const LINE_HREF = "https://line.me/R/ti/p/@798ddeqo";
+const HOTPEPPER_HREF = "https://beauty.hotpepper.jp/kr/slnH000616454/";
 
 function CTABlock() {
   return (
@@ -46,14 +46,11 @@ function CheckItem({ text }: { text: string }) {
 }
 
 export default function Home() {
+  // 口コミ写真グリッド: 左上12枚削除 + 「大幅なサイズダウン バンザイ！」重複(1-86)削除 = 12枚、4列3行
   const reviewPhotos = [
-    "/assets/1-41.webp", "/assets/1-43.webp", "/assets/1-45.webp", "/assets/1-47.webp",
-    "/assets/1-49.webp", "/assets/1-51.webp", "/assets/1-53.webp", "/assets/1-55.webp",
-    "/assets/1-57.webp", "/assets/1-59.webp", "/assets/1-61.webp", "/assets/1-63.webp",
     "/assets/1-65.webp", "/assets/1-67.webp", "/assets/1-69.webp", "/assets/1-70.webp",
     "/assets/1-72.webp", "/assets/1-74.webp", "/assets/1-76.webp", "/assets/1-78.webp",
-    "/assets/1-80.webp", "/assets/1-82.webp", "/assets/1-84.webp", "/assets/1-86.webp",
-    "/assets/1-88.webp",
+    "/assets/1-80.webp", "/assets/1-82.webp", "/assets/1-84.webp", "/assets/1-88.webp",
   ];
 
   return (
@@ -115,7 +112,7 @@ export default function Home() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(5, 1fr)",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: "8px",
               marginBottom: "12px",
             }}
@@ -147,8 +144,11 @@ export default function Home() {
             当店は整体サロンです。ホットペッパーで沢山の口コミを頂いていますのでご確認ください。
           </p>
           <div className="flex flex-col items-center gap-4">
-            <button
-              className="hover:bg-gray-50 transition-colors"
+            <a
+              href="https://beauty.hotpepper.jp/kr/slnH000616454/review/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center hover:bg-gray-50 transition-colors"
               style={{
                 width: "250px",
                 height: "40px",
@@ -158,25 +158,11 @@ export default function Home() {
                 color: "#898989",
                 fontSize: "17px",
                 fontWeight: "700",
+                textDecoration: "none",
               }}
             >
               口コミを見る ▼
-            </button>
-            <button
-              className="hover:bg-gray-50 transition-colors"
-              style={{
-                width: "250px",
-                height: "40px",
-                backgroundColor: "#fff",
-                borderRadius: "8px",
-                border: "1px solid #acacac",
-                color: "#898989",
-                fontSize: "17px",
-                fontWeight: "700",
-              }}
-            >
-              口コミを見る ▼
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -189,9 +175,8 @@ export default function Home() {
 
           {/* こだわり 01 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">01：個室のプライベート空間</h3>
-          <div className="flex gap-2 mb-4">
-            <img src="/assets/1-105.webp" alt="個室プライベート空間1" className="w-1/2 h-auto object-cover" />
-            <img src="/assets/1-106.webp" alt="個室プライベート空間2" className="w-1/2 h-auto object-cover" />
+          <div className="mb-4">
+            <img src="/assets/1-105.webp" alt="個室プライベート空間" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base mb-10 leading-relaxed">
             カーテンを閉めればプライベート空間になります。多くの場合、お客様ひとりずつでの接遇
@@ -200,9 +185,8 @@ export default function Home() {
 
           {/* こだわり 02 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">02：おひとりおひとりに合わせた無理のないプランをご提案します</h3>
-          <div className="flex gap-2 mb-4">
-            <img src="/assets/1-109.webp" alt="個別プラン提案1" className="w-1/2 h-auto object-cover" />
-            <img src="/assets/1-110.webp" alt="個別プラン提案2" className="w-1/2 h-auto object-cover" />
+          <div className="mb-4">
+            <img src="/assets/1-109.webp" alt="個別プラン提案" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base mb-10 leading-relaxed">
             カウンセリングではお身体の状態を聞かせて頂き、お悩みに沿って無理なく痩せるプランを
@@ -211,9 +195,8 @@ export default function Home() {
 
           {/* こだわり 03 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">03：ダイエットだけじゃない！全身美容整体も施します</h3>
-          <div className="flex gap-2 mb-4">
-            <img src="/assets/1-113.webp" alt="全身美容整体1" className="w-1/2 h-auto object-cover" />
-            <img src="/assets/1-114.webp" alt="全身美容整体2" className="w-1/2 h-auto object-cover" />
+          <div className="mb-4">
+            <img src="/assets/1-113.webp" alt="全身美容整体" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base leading-relaxed">
             ダイエットはもちろんのこと、ストレートネック、反り腰、猫背、産後の骨盤矯正、小顔調
@@ -326,12 +309,19 @@ export default function Home() {
             ))}
           </ul>
 
-          {/* Google マップ */}
-          <img
-            src="/assets/1-234.webp"
-            alt="店舗地図"
-            className="w-full h-auto mb-8 object-cover"
-          />
+          {/* Google マップ（インタラクティブ） */}
+          <div className="w-full mb-8" style={{ borderRadius: "8px", overflow: "hidden", border: "1px solid #e5e5e5" }}>
+            <iframe
+              title="vivari 店舗地図"
+              src="https://maps.google.com/maps?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E8%A5%BF%E4%BA%AC%E5%8C%BA%E6%A8%AB%E5%8E%9F%E6%B1%9F%E3%83%8E%E6%9C%AC%E7%94%BA11-1+%E6%B4%9B%E8%A5%BF%E3%83%8F%E3%82%A4%E3%83%841F&output=embed&hl=ja"
+              width="100%"
+              height="400"
+              style={{ border: 0, display: "block" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 
@@ -356,9 +346,8 @@ export default function Home() {
           {/* 理由1 */}
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由１：太った理由を徹底分析</h3>
-            <div className="flex gap-2 mb-4">
-              <img src="/assets/1-251.webp" alt="肥満DNA検査1" className="w-1/2 h-auto object-cover" />
-              <img src="/assets/1-252.webp" alt="肥満DNA検査2" className="w-1/2 h-auto object-cover" />
+            <div className="mb-4">
+              <img src="/assets/1-251.webp" alt="肥満DNA検査" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               肥満DNA検査による自分のスーパーフード知ることができ、分子栄養学を用いて体質を考慮した効率的なダイエットメニューを作成します。
@@ -368,9 +357,8 @@ export default function Home() {
           {/* 理由2 */}
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由２：痩身整体で生涯太りにくい体質作り</h3>
-            <div className="flex gap-2 mb-4">
-              <img src="/assets/1-256.webp" alt="痩身整体1" className="w-1/2 h-auto object-cover" />
-              <img src="/assets/1-257.webp" alt="痩身整体2" className="w-1/2 h-auto object-cover" />
+            <div className="mb-4">
+              <img src="/assets/1-256.webp" alt="痩身整体" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               主に姿勢矯正と骨盤矯正を行なって、痩せやすい体づくりをしていきます。
@@ -380,9 +368,8 @@ export default function Home() {
           {/* 理由3 */}
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由３：マンツーマン食事サポート</h3>
-            <div className="flex gap-2 mb-4">
-              <img src="/assets/1-261.webp" alt="マンツーマン食事サポート1" className="w-1/2 h-auto object-cover" />
-              <img src="/assets/1-262.webp" alt="マンツーマン食事サポート2" className="w-1/2 h-auto object-cover" />
+            <div className="mb-4">
+              <img src="/assets/1-261.webp" alt="マンツーマン食事サポート" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               LINEでサポート！楽しく続く食習慣を形成していきます。
