@@ -21,7 +21,7 @@ function CTABlock() {
       <a
         href={HOTPEPPER_HREF}
         className="flex items-center justify-center gap-2 rounded-[3px] hover:opacity-90 transition-opacity"
-        style={{ width: "392px", height: "49px", backgroundColor: "#bf1391" }}
+        style={{ width: "321px", height: "49px", backgroundColor: "#bf1391" }}
       >
         <i className="fas fa-calendar text-white text-2xl"></i>
         <span className="text-white text-xl font-semibold">ホットペッパーで予約する</span>
