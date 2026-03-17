@@ -161,6 +161,7 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  base: process.env.GITHUB_PAGES === "true" ? "/diet-salon-lp/" : "/",
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
   build: {

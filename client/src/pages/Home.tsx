@@ -6,6 +6,10 @@
 const LINE_HREF = "https://line.me/R/ti/p/@798ddeqo";
 const HOTPEPPER_HREF = "https://beauty.hotpepper.jp/kr/slnH000616454/";
 
+// GitHub Pages対応: BASE_URLを使って動的にアセットパスを解決する
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const asset = (path: string) => `${base}${path}`;
+
 function CTABlock() {
   return (
     <div className="flex flex-col items-center gap-3 w-full py-8">
@@ -48,9 +52,9 @@ function CheckItem({ text }: { text: string }) {
 export default function Home() {
   // 口コミ写真グリッド: 左上12枚削除 + 「大幅なサイズダウン バンザイ！」重複(1-86)削除 = 12枚、4列3行
   const reviewPhotos = [
-    "/assets/1-65.webp", "/assets/1-67.webp", "/assets/1-69.webp", "/assets/1-70.webp",
-    "/assets/1-72.webp", "/assets/1-74.webp", "/assets/1-76.webp", "/assets/1-78.webp",
-    "/assets/1-80.webp", "/assets/1-82.webp", "/assets/1-84.webp", "/assets/1-88.webp",
+    asset("/assets/1-65.webp"), asset("/assets/1-67.webp"), asset("/assets/1-69.webp"), asset("/assets/1-70.webp"),
+    asset("/assets/1-72.webp"), asset("/assets/1-74.webp"), asset("/assets/1-76.webp"), asset("/assets/1-78.webp"),
+    asset("/assets/1-80.webp"), asset("/assets/1-82.webp"), asset("/assets/1-84.webp"), asset("/assets/1-88.webp"),
   ];
 
   return (
@@ -59,7 +63,7 @@ export default function Home() {
       {/* ===== FV (ファーストビュー) ===== */}
       <section className="flex justify-center bg-white">
         <img
-          src="/assets/1-4.webp"
+          src={asset("/assets/1-4.webp")}
           alt="ダイエット整体サロン ファーストビュー"
           className="w-full max-w-[700px] h-auto"
         />
@@ -75,13 +79,13 @@ export default function Home() {
       {/* ===== B/A実績 セクション ===== */}
       <section className="flex justify-center bg-white py-4">
         <div className="w-full max-w-[700px] px-4 flex flex-col items-center gap-6">
-          <img src="/assets/1-19.webp" alt="50代 ビフォーアフター -10.8kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-21.webp" alt="40代 ビフォーアフター -8.8kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-23.webp" alt="40代③ ビフォーアフター -8.9kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-25.webp" alt="30代② ビフォーアフター -10kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-27.webp" alt="50代 ビフォーアフター -7.5kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-29.webp" alt="50代② ビフォーアフター -14.9kg" className="w-full max-w-[460px] h-auto" />
-          <img src="/assets/1-31.webp" alt="40代② ビフォーアフター -8.1kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-19.webp")} alt="50代 ビフォーアフター -10.8kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-21.webp")} alt="40代 ビフォーアフター -8.8kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-23.webp")} alt="40代③ ビフォーアフター -8.9kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-25.webp")} alt="30代② ビフォーアフター -10kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-27.webp")} alt="50代 ビフォーアフター -7.5kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-29.webp")} alt="50代② ビフォーアフター -14.9kg" className="w-full max-w-[460px] h-auto" />
+          <img src={asset("/assets/1-31.webp")} alt="40代② ビフォーアフター -8.1kg" className="w-full max-w-[460px] h-auto" />
         </div>
       </section>
 
@@ -176,7 +180,7 @@ export default function Home() {
           {/* こだわり 01 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">01：個室のプライベート空間</h3>
           <div className="mb-4">
-            <img src="/assets/1-105.webp" alt="個室プライベート空間" className="w-full h-auto object-cover" />
+            <img src={asset("/assets/1-105.webp")} alt="個室プライベート空間" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base mb-10 leading-relaxed">
             カーテンを閉めればプライベート空間になります。多くの場合、お客様ひとりずつでの接遇
@@ -186,7 +190,7 @@ export default function Home() {
           {/* こだわり 02 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">02：おひとりおひとりに合わせた無理のないプランをご提案します</h3>
           <div className="mb-4">
-            <img src="/assets/1-109.webp" alt="個別プラン提案" className="w-full h-auto object-cover" />
+            <img src={asset("/assets/1-109.webp")} alt="個別プラン提案" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base mb-10 leading-relaxed">
             カウンセリングではお身体の状態を聞かせて頂き、お悩みに沿って無理なく痩せるプランを
@@ -196,7 +200,7 @@ export default function Home() {
           {/* こだわり 03 */}
           <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">03：ダイエットだけじゃない！全身美容整体も施します</h3>
           <div className="mb-4">
-            <img src="/assets/1-113.webp" alt="全身美容整体" className="w-full h-auto object-cover" />
+            <img src={asset("/assets/1-113.webp")} alt="全身美容整体" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base leading-relaxed">
             ダイエットはもちろんのこと、ストレートネック、反り腰、猫背、産後の骨盤矯正、小顔調
@@ -217,7 +221,7 @@ export default function Home() {
           <div className="flex justify-center mb-6">
             <div style={{ width: "177px", height: "177px", borderRadius: "50%", overflow: "hidden" }}>
               <img
-                src="/assets/1-125.webp"
+                src={asset("/assets/1-125.webp")}
                 alt="エステティシャン 山下"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
               />
@@ -240,7 +244,7 @@ export default function Home() {
           <div className="flex justify-center mb-6">
             <div style={{ width: "185px", height: "185px", borderRadius: "50%", overflow: "hidden" }}>
               <img
-                src="/assets/1-157.webp"
+                src={asset("/assets/1-157.webp")}
                 alt="院長 福田志門"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
               />
@@ -265,7 +269,7 @@ export default function Home() {
           <div className="flex justify-center mb-6">
             <div style={{ width: "185px", height: "185px", borderRadius: "50%", overflow: "hidden" }}>
               <img
-                src="/assets/1-177.webp"
+                src={asset("/assets/1-177.webp")}
                 alt="代表 阪東繁樹"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
               />
@@ -291,7 +295,7 @@ export default function Home() {
           <SectionDivider />
           <h2 style={{ color: "#f39f88", fontSize: "32px", fontWeight: "600", marginBottom: "24px" }}>店舗情報</h2>
           <img
-            src="/assets/1-181.webp"
+            src={asset("/assets/1-181.webp")}
             alt="店舗外観"
             className="w-full h-auto mb-6 object-cover"
           />
@@ -329,7 +333,7 @@ export default function Home() {
       <section className="flex justify-center bg-white py-4">
         <div className="w-full max-w-[700px] px-4 flex flex-col items-center">
           <img
-            src="/assets/1-236.webp"
+            src={asset("/assets/1-236.webp")}
             alt="BOOK特典"
             className="h-auto mb-4"
             style={{ width: "301px" }}
@@ -347,7 +351,7 @@ export default function Home() {
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由１：太った理由を徹底分析</h3>
             <div className="mb-4">
-              <img src="/assets/1-251.webp" alt="肥満DNA検査" className="w-full h-auto object-cover" />
+              <img src={asset("/assets/1-251.webp")} alt="肥満DNA検査" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               肥満DNA検査による自分のスーパーフード知ることができ、分子栄養学を用いて体質を考慮した効率的なダイエットメニューを作成します。
@@ -358,7 +362,7 @@ export default function Home() {
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由２：痩身整体で生涯太りにくい体質作り</h3>
             <div className="mb-4">
-              <img src="/assets/1-256.webp" alt="痩身整体" className="w-full h-auto object-cover" />
+              <img src={asset("/assets/1-256.webp")} alt="痩身整体" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               主に姿勢矯正と骨盤矯正を行なって、痩せやすい体づくりをしていきます。
@@ -369,7 +373,7 @@ export default function Home() {
           <div style={{ border: "2px solid #e5e5e5", borderRadius: "4px", padding: "24px", marginBottom: "24px" }}>
             <h3 style={{ color: "#f39f88", fontSize: "26px", fontWeight: "600", marginBottom: "16px" }}>理由３：マンツーマン食事サポート</h3>
             <div className="mb-4">
-              <img src="/assets/1-261.webp" alt="マンツーマン食事サポート" className="w-full h-auto object-cover" />
+              <img src={asset("/assets/1-261.webp")} alt="マンツーマン食事サポート" className="w-full h-auto object-cover" />
             </div>
             <p className="text-[#736357] text-base leading-relaxed">
               LINEでサポート！楽しく続く食習慣を形成していきます。
@@ -389,9 +393,9 @@ export default function Home() {
       <section className="flex justify-center bg-white py-4">
         <div className="w-full max-w-[700px] px-4">
           <div className="flex justify-center gap-0">
-            <img src="/assets/1-280.webp" alt="資格証明書1" className="w-1/3 h-auto object-cover" />
-            <img src="/assets/1-281.webp" alt="資格証明書2" className="w-1/3 h-auto object-cover" />
-            <img src="/assets/1-282.webp" alt="資格証明書3" className="w-1/3 h-auto object-cover" />
+            <img src={asset("/assets/1-280.webp")} alt="資格証明書1" className="w-1/3 h-auto object-cover" />
+            <img src={asset("/assets/1-281.webp")} alt="資格証明書2" className="w-1/3 h-auto object-cover" />
+            <img src={asset("/assets/1-282.webp")} alt="資格証明書3" className="w-1/3 h-auto object-cover" />
           </div>
         </div>
       </section>
@@ -400,7 +404,7 @@ export default function Home() {
       <section className="flex justify-center bg-white py-4">
         <div className="w-full max-w-[700px] px-4 flex flex-col items-center">
           <img
-            src="/assets/1-268.webp"
+            src={asset("/assets/1-268.webp")}
             alt="BOOK特典"
             className="h-auto mb-4"
             style={{ width: "301px" }}
