@@ -101,7 +101,7 @@ export default function Home() {
       {/* ===== FV (ファーストビュー) ===== */}
       <section className="flex justify-center bg-white">
         <img
-          src={asset("/assets/1-4.webp")}
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663410806327/UugJX2BVa6fW8hMuQgbogf/自社LP_FV_de0f1785.png"
           alt="ダイエット整体サロン ファーストビュー"
           className="w-full max-w-[700px] h-auto"
         />
