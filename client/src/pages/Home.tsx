@@ -196,13 +196,12 @@ export default function Home() {
           <h2 style={{ color: "#f39f88", fontSize: "28px", fontWeight: "600", marginBottom: "24px" }}>３つのこだわり</h2>
 
           {/* こだわり 01 */}
-          <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">01：個室のプライベート空間</h3>
+          <h3 className="text-[#4b4f58] text-lg font-semibold mb-4">01：完全個室のプライベート空間</h3>
           <div className="mb-4">
             <img src={asset("/assets/1-105.webp")} alt="個室プライベート空間" className="w-full h-auto object-cover" />
           </div>
           <p className="text-[#736357] text-base mb-10 leading-relaxed">
-            カーテンを閉めればプライベート空間になります。多くの場合、お客様ひとりずつでの接遇
-            です。周りを気にせずに、なんでもご相談ください。
+            完全個室のプライベート空間になります。多くの場合、一対一で丁寧にお話を伺います。周りを気にせずに、なんでもご相談ください。
           </p>
 
           {/* こだわり 02 */}
@@ -246,7 +245,7 @@ export default function Home() {
             </div>
           </div>
           <ul className="mb-4 space-y-2">
-            {["24歳", "キャリア2年", "エステティシャン＋保育士"].map((text, i) => (
+            {["24歳", "キャリア3年", "エステティシャン＋保育士"].map((text, i) => (
               <CheckItem key={i} text={text} />
             ))}
           </ul>
