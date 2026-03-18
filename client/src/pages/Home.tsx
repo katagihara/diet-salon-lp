@@ -1,4 +1,5 @@
 // Design: Figmaデザイン忠実再現
+import React from "react";
 // Color: #f39f88 (salmon accent), #4dce6e (LINE green), #bf1391 (HotPepper magenta), #736357 (body text), #4b4f58 (heading)
 // Font: Noto Sans JP
 // Layout: Single column LP, max-width 700px centered
@@ -38,6 +39,43 @@ function CTABlock() {
 
 function SectionDivider() {
   return <hr className="border-neutral-200 my-8" />;
+}
+
+function ReviewAccordion() {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center justify-center hover:bg-gray-50 transition-colors"
+        style={{
+          width: "250px",
+          height: "40px",
+          backgroundColor: "#fff",
+          borderRadius: "8px",
+          border: "1px solid #acacac",
+          color: "#898989",
+          fontSize: "17px",
+          fontWeight: "700",
+          cursor: "pointer",
+        }}
+        aria-expanded={open}
+      >
+        口コミを見る {open ? "▲" : "▼"}
+      </button>
+      {open && (
+        <div className="w-full mt-2">
+          <iframe
+            src="https://beauty.hotpepper.jp/kr/slnH000616454/review/"
+            height="450"
+            width="100%"
+            style={{ border: "none", borderRadius: "8px" }}
+            title="ホットペッパービューティー 口コミ"
+          />
+        </div>
+      )}
+    </div>
+  );
 }
 
 function CheckItem({ text }: { text: string }) {
@@ -147,27 +185,7 @@ export default function Home() {
           <p className="text-[#736357] text-base mb-6 leading-relaxed">
             当店は整体サロンです。ホットペッパーで沢山の口コミを頂いていますのでご確認ください。
           </p>
-          <div className="flex flex-col items-center gap-4">
-            <a
-              href="https://beauty.hotpepper.jp/kr/slnH000616454/review/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center hover:bg-gray-50 transition-colors"
-              style={{
-                width: "250px",
-                height: "40px",
-                backgroundColor: "#fff",
-                borderRadius: "8px",
-                border: "1px solid #acacac",
-                color: "#898989",
-                fontSize: "17px",
-                fontWeight: "700",
-                textDecoration: "none",
-              }}
-            >
-              口コミを見る ▼
-            </a>
-          </div>
+          <ReviewAccordion />
         </div>
       </section>
 
